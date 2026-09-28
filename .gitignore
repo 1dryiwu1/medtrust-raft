@@ -1,0 +1,76 @@
+# Go build outputs
+medtrust-node
+medtrust-node.exe
+medtrust-node~
+node.exe
+nul
+
+# BoltDB数据文件（运行时数据，不需要上传）
+data/
+
+# 日志文件
+logs/
+scripts/logs/
+
+# 临时截图
+temp_pics/
+
+# Web依赖（node_modules）
+web/node_modules/
+
+# Web构建产物（如果有的话）
+web/dist/
+web/.next/
+web/build/
+
+# IDE配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS文件
+.DS_Store
+Thumbs.db
+
+# WorkBuddy工作目录（AI工具缓存）
+.workbuddy/
+.claude/
+.gocache/
+
+# 本地工作产物与工具缓存，不进入公开源码仓库
+.codex-remote-attachments/
+.npm-cache/
+.playwright-cli/
+output/
+release/
+tmp/
+
+# 敏感配置（如有包含密钥的配置文件，按需添加）
+# configs/secrets.yaml
+configs/*.json
+readme.txt
+
+# ========== 排除所有 Markdown 文件（除 readme.md 外） ==========
+*.md
+!readme.md
+!docs/门户网站运行说明.md
+
+# ========== 排除所有文档文件 ==========
+*.docx
+*.doc
+*.pdf
+*.pptx
+*.xlsx
+*.xls
+
+# ========== 排除临时/测试文件 ==========
+temp_docx_tables.txt
+temp_docx_text.txt
+web-encode-test.html
+web-preview-test.html
+web-pview.html
+
+# ========== 排除 HTML 辅助文件（保留 web/ 下的项目文件） ==========
+技术路线-PPT.html
+技术路线-流程图.html

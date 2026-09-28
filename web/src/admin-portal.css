@@ -1,0 +1,37 @@
+.admin-screen {
+  min-height: 100vh;
+}
+
+.admin-return {
+  position: fixed;
+  z-index: 1000;
+  right: 22px;
+  bottom: 20px;
+  border: 1px solid rgba(77, 214, 255, 0.55);
+  border-radius: 6px;
+  padding: 10px 14px;
+  background: rgba(4, 25, 47, 0.92);
+  color: #d7f7ff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.admin-return:hover,
+.admin-return:focus-visible {
+  background: #0b4267;
+  outline: 2px solid #42d5ff;
+  outline-offset: 2px;
+}
+
+.mobile-logout { display: none; }
+
+.account-list { max-height: 520px; overflow: auto; }
+.account-row { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; padding: 12px 0; border-top: 1px solid #e6ebf2; }
+.account-row b, .account-row small { display: block; }
+.account-row b { color: #172033; font-size: 13px; }
+.account-row small { color: #69758b; font-size: 11px; margin-top: 3px; }
+
+@media (max-width: 800px) {
+  .portal-sidebar nav .mobile-logout { display: block; color: #ffb5b5; }
+}

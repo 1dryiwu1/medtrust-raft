@@ -1,0 +1,32 @@
+# MedTrust-Raft 节点配置示例
+# 每个节点启动时加载此文件
+
+# 当前节点身份
+node_id: "node-1"
+# 当前节点监听地址（RPC + HTTP API 共用端口由各服务分开声明）
+rpc_addr: "127.0.0.1:7001"
+api_addr: "127.0.0.1:8001"
+# 可选：API 认证密钥。若设置，写入接口需携带 Header "X-API-Key: <key>"
+api_key: "medtrust-cluster-demo-key"
+
+# 集群成员列表（不含自身）
+peers:
+  - id: "node-2"
+    addr: "127.0.0.1:7002"
+  - id: "node-3"
+    addr: "127.0.0.1:7003"
+
+# Raft 调优参数
+raft:
+  # 心跳间隔（毫秒）— Leader 每隔此时间发送一次 AppendEntries 心跳
+  heartbeat_ms: 150
+  # 选举超时随机范围（毫秒）— Follower 在 [min, max] 内随机等待后发起选举
+  election_timeout_min_ms: 300
+  election_timeout_max_ms: 600
+  # 节点间 RPC 调用超时（毫秒）— 网络环境差时可调高
+  rpc_timeout_ms: 300
+
+# 存储路径
+storage:
+  # BoltDB 数据库文件路径
+  db_path: "./data/node-1/chain.db"
